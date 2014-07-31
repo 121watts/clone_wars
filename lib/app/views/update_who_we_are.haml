@@ -1,0 +1,14 @@
+- if session[:user] == "player"
+  %form{:action => "/admin/update_who_we_are", :method => "POST"}
+    %input#update-title{:placeholder => "Title"}
+    %br
+    %textarea#update-description{:placeholder => "Description"}
+    %br
+    %input{:type => "file"}
+    %br
+    %input{:type => "submit"}
+
+    %br
+    %a{:href => "/admin/update_dashboard"} Temporary shortcut to dashboard
+- else
+  = haml :not_here
